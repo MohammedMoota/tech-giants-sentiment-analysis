@@ -1,64 +1,29 @@
-# Tech Giants Showdown: Apple vs. Samsung Sentiment Analysis
+# Apple vs. Samsung: Sentiment Analysis
 
-## 📌 Project Overview
+## 📌 Overview
 
-This project performs a comparative sentiment analysis on approximately 14,000 mobile reviews for Apple and Samsung devices (2023–2025). It aims to determine public sentiment and evaluate the performance of different machine learning models in classifying reviews as **Positive**, **Negative**, or **Neutral**.
+This project compares **Syntactic (TF-IDF)** and **Semantic (Word2Vec)** approaches to classify sentiment in ~14,000 mobile reviews.
 
-The core analysis compares two approaches:
-
-1. **Syntactic Method**: TF-IDF Vectorization with Support Vector Machine (SVM).
-2. **Semantic Method**: Word2Vec Embeddings with Support Vector Machine (SVM).
+**Goal:** Determine if public sentiment favors Apple or Samsung using Machine Learning.
 
 ## 📂 Dataset
 
-- **Source**: Kaggle "Mobile Reviews Sentiment" dataset.
-- **Volume**: ~14,000 reviews (Filtered for Apple and Samsung).
-- **Balance**: Balanced distribution between Apple (~7,100) and Samsung (~7,000) reviews.
-- **Classes**: Positive, Negative, Neutral.
+[**Kaggle: Mobile Reviews Sentiment & Specification**](https://www.kaggle.com/datasets/mohankrishnathalla/mobile-reviews-sentiment-and-specification)
 
-## 🛠️ Methodology & Models
+- **Size:** 14,000 Reviews (Balanced).
+- **Classes:** Positive, Negative, Neutral.
 
-### 1. Data Preprocessing (The Pipeline)
+## ⚙️ How It Works
 
-An industrial-strength NLP pipeline was implemented to clean and normalize text:
-
-- **Emoji Translation**: Converted emojis (e.g., 😡, 😍) into sentiment-bearing text.
-- **Contraction Expansion**: "won't" → "will not".
-- **Noise Removal**: Stripped non-alphabetic characters.
-- **Lemmatization**: Reduced words to their base forms using NLTK's WordNetLemmatizer.
-- **Duplicate Removal**: Ensured data integrity by removing exact duplicates.
-
-### 2. Model A: SVM + TF-IDF (Syntactic)
-
-- **Feature Engineering**: Uses Term Frequency-Inverse Document Frequency (TF-IDF) to convert text to vectors, focusing on word importance.
-- **Algorithm**: Linear SVC with regularization (C=0.3).
-- **Strength**: Excellent at capturing keyword-based sentiment.
-
-### 3. Model B: SVM + Word2Vec (Semantic)
-
-- **Feature Engineering**: Uses Gensim's Word2Vec to create dense vector embeddings that capture semantic meaning and context.
-- **Algorithm**: Linear SVC with strict regularization (C=0.1).
-- **Strength**: Understands context better but often requires larger datasets to outperform TF-IDF on specific domains.
-
-## 📊 Results Summary
-
-| Model | Accuracy | Insight |
-|-------|----------|---------|
-| **TF-IDF + SVM** | **~95%** | Highly effective for this dataset; specific keywords are strong predictors of sentiment. |
-| **Word2Vec + SVM** | **~72%** | Lower accuracy suggests the dataset size may be insufficient to fully leverage dense embeddings, or the keyword signals are simply stronger. |
-
-*Note: The project favors the Syntax-based model (TF-IDF) for this specific application.*
+1. **Preprocessing:** Cleaned text (emojis -> text, fix contractions, lemmatization).
+2. **Model A (Syntax):** SVM + TF-IDF. High accuracy (**95%**) by catching specific keywords.
+3. **Model B (Semantics):** SVM + Word2Vec. Lower accuracy (**72%**) due to limited data size for embeddings.
 
 ## 🚀 Usage
 
-1. Clone this repository.
-2. Ensure you have the required libraries installed:
-
-    ```bash
-    pip install pandas numpy matplotlib seaborn scikit-learn nltk gensim
-    ```
-
-3. Open the Jupyter Notebook `NLP_Assignement.ipynb` to run the analysis.
+1. Clone repo.
+2. Install dependencies: `pip install pandas numpy matplotlib seaborn scikit-learn nltk gensim`
+3. Run `Apple_vs_Samsung_Sentiment_Analysis.ipynb`.
 
 ## 👤 Author
 
