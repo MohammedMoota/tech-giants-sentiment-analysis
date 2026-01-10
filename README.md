@@ -4,7 +4,7 @@
 
 This project compares **Syntactic (TF-IDF)** and **Semantic (Word2Vec)** approaches to classify sentiment in ~14,000 mobile reviews. A **Hybrid Ensemble** model combines both for optimal accuracy.
 
-## 📸 Interface
+##  Interface
 
 ![SentiMeter Interface](interface_screenshot.png)
 
