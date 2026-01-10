@@ -1,6 +1,6 @@
 # Apple vs. Samsung: Sentiment Analysis
 
-## 📌 Overview
+##  Overview
 
 This project compares **Syntactic (TF-IDF)** and **Semantic (Word2Vec)** approaches to classify sentiment in ~14,000 mobile reviews. A **Hybrid Ensemble** model combines both for optimal accuracy.
 
@@ -8,7 +8,7 @@ This project compares **Syntactic (TF-IDF)** and **Semantic (Word2Vec)** approac
 
 ![SentiMeter Interface](interface_screenshot.png)
 
-## 📂 Project Structure
+##  Project Structure
 
 ```
 ├── Apple_vs_Samsung_Sentiment_Analysis.ipynb  # Original Analysis
@@ -22,7 +22,7 @@ This project compares **Syntactic (TF-IDF)** and **Semantic (Word2Vec)** approac
 └── README.md
 ```
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Train Models (Optional - already trained)
 ```bash
@@ -42,13 +42,9 @@ npm run dev
 ```
 Open `http://localhost:5173`
 
-## ⚙️ How It Works
+##  How It Works
 
 1. **Preprocessing:** Text cleaning (lowercasing, removing URLs, handling contractions, negation handling, lemmatization)
 2. **Model A (Syntactic):** SVM + TF-IDF (15 features)
 3. **Model B (Semantic):** SVM + Word2Vec (32-dim embeddings)
 4. **Ensemble:** Average probabilities from both models
-
-## 👤 Author
-
-**MohammedMoota**
